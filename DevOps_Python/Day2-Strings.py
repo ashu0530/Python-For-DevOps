@@ -92,3 +92,157 @@ print('ashutosh123'.isalnum()) #True
 print('ashutosh123'.isalpha()) #False
 print('abc123'.isalnum())  #True
 
+
+
+stringformatlog="%s + %s = %s" % (1,2,"Three") 
+print(stringformatlog)
+print(type(stringformatlog))
+
+#control the number of places a float, %f, prints
+floatprint="%.5f" % 1.234567
+print(floatprint)
+print(type(floatprint))
+
+
+#String with placeholders {} These act as “slots” that will be filled later.
+'''.format() method
+
+The .format() method replaces those {} placeholders with the values you provide in order. '''
+
+a='{} comes before {}'.format('first','second')
+print(a)
+
+
+'''You can specify index numbers in the brackets to insert values in an order different
+ than that in the argument list.'''
+
+a='{1} comes after {0}, but comes before {2}'.format('first','second','third')
+print(a)
+
+'''An even more powerful feature is that the insert values can be specified by name:
+'''
+
+a = '{firstname} with last name {lastname}'.format(firstname='ashutosh',lastname='pandey')
+print(a)
+
+
+# Here a dict works to supply the key values for name-based replacement fields
+values = {'first': 'Bill', 'last': 'bailey'}
+print("Won't you come home {first} {last}?".format(**values))
+
+'''Format specifications are done using the format specification mini-language. Our
+ topic also uses another type of language called f-strings.
+
+
+ Python f-strings use the same formatting language as the format method, but offer a
+ more straightforward and intuitive mechanism for using them. f-strings are prepen
+ded with either f or F before the first quotation mark. Like the format string previ
+ously described, f-strings use curly braces to demarcate replacement fields. In an f
+string, however, the content of the replacement field is an expression. This approach
+ means it can refer to variables defined in the current scope or involve calculations:
+'''
+
+a = 1
+b = 2
+ans = f"a is {a}, b is {b}. adding them result will be {a+b}"
+print(ans)
+
+
+count = 43
+ans = f"|{count:5d}"
+print(ans)
+
+'''
+Perfect — let’s break this one down carefully 👇
+
+```python
+count = 43
+ans = f"|{count:5d}"
+print(ans)
+```
+
+---
+
+### 🔹 Step 1: `f"..."` — f-string
+
+The `f` before the string means **formatted string literal** (f-string), introduced in Python 3.6.
+It allows you to directly insert variables or expressions inside `{}`.
+
+So here, `count` (which is `43`) is placed inside `{}`.
+
+---
+
+### 🔹 Step 2: Format specifier `:5d`
+
+Inside `{count:5d}` →
+
+* `:` introduces a **format specification**.
+* `5` → means the **total width** of the output field should be **5 characters wide**.
+* `d` → means **decimal integer** (used for numbers).
+
+So `:5d` means:
+
+> Print this integer right-aligned in a field that’s 5 characters wide.
+
+---
+
+### 🔹 Step 3: Evaluate the f-string
+
+`count = 43` has **2 digits**,
+but the width requested is **5**,
+so Python adds **3 spaces to the left** to make it 5 characters total.
+
+Hence:
+
+```
+'   43'
+```
+
+---
+
+### 🔹 Step 4: The `|` before it
+
+The `|` at the start is just a **visual marker** so you can see the padding.
+
+When printed:
+
+```text
+|   43
+```
+
+You can clearly see there are 3 spaces between `|` and `43`.
+
+---
+
+✅ **Final Output**
+
+```
+|   43
+```
+
+---
+
+### 💡 Tip:
+
+You can left-align instead by using `<`:
+
+```python
+f"|{count:<5d}"
+# Output: |43   
+```
+
+👉 Now the number is on the left, with padding on the right.
+
+
+'''
+from string import Template
+greeting = Template("$hello Ashutosh")
+print(greeting.substitute(hello="Hallo"))
+#Hallo Ashutosh
+
+print(greeting.substitute(hello="Zdravstvuyte"))
+# 'Zdravstvuyte Ashutosh'
+
+print(greeting.substitute(hello="Nǐn hǎo"))
+# 'Nǐn hǎo Ashutosh'
+
