@@ -156,13 +156,32 @@ def average(*numbers):
         sum = sum+i
     print("Average is: ", sum / len(numbers))
 
-average(5,6,7,1)
+average(5,6,7,1,2,5,8)
 
 print(19/4)
 
 
 #2 Way -> keyword Arbitrary Arguments: while creating a function, pass a ** before the parameter name while defining the function. The function accessess the arguments by processing them in the form of dictionary.
+def name(**name):
+    print(type(name))
+    print("Hello,", name["fname"], name['mname'],name["lname"])
 
+name(mname="parasar", lname="pandey",fname="Ashutosh")
+
+
+
+#Return statement is used to return the value of the expression back to the calling function.
+
+def average(*numbers):
+    print(type(numbers))
+    sum = 0
+    for i in numbers:
+        sum = sum+i
+#    return 7                    #priority first
+    return sum / len(numbers)
+
+c=average(5,6,7,1,2,5,8)
+print(c)
 
     
 
