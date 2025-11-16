@@ -29,4 +29,26 @@ print(tup2)
 
 
 
-#Methods in tuple
+#Methods in tuple  --> in tuples you can't directly change like add, remove we have to copy tuple in list change in list and copy in another tuple
+countries = ("INDIA","ITALY","England","Spain")
+temp = list(countries)
+temp.append("Russia") #Add item
+temp.pop(3)
+temp[2] = "Finland"
+countries = tuple(temp)
+print(countries)
+
+
+#Concatenate two tuples without converting them to list
+countries=("INDIA","Afganistan","Bangladesh","Srilanka")
+countries2=("America","Canada","France")
+AsiaEurope=countries+countries2
+print(AsiaEurope)
+
+
+tuple1 = (0,1,2,3,2,3,4,1,1)
+res = tuple1.count(3)
+print("Count of 3 in tuple1 is:", res)
+print("Index of 3 in tuple: ", tuple1.index(4))
+print("Starting and ending till 3 to 8 index is: ", tuple1.index(4,4,8) )   #4:8 slicing
+print("length:", len(tuple1))

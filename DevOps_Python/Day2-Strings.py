@@ -246,3 +246,86 @@ print(greeting.substitute(hello="Zdravstvuyte"))
 print(greeting.substitute(hello="Nǐn hǎo"))
 # 'Nǐn hǎo Ashutosh'
 
+
+
+
+#F string formatting in python 
+
+
+#old way to do formatting still in use but not convient
+letter = "Hey my name is {} and  i am from {}"
+country = "India"
+name = "Ashutosh"
+letter.format(name,country)
+print(letter.format(name,country))
+
+#what if i used as below which going to be wrong
+print(letter.format(country,name))       
+
+'''
+It is a new string formatting mechanism introduced by the PEP 498. It is also known as Literal String Interpolation or more commonly as F-strings (f character preceding 
+the string literal). The primary focus of this mechanism is to make the interpolation easier.
+
+When we prefix the string with the letter 'f', the string becomes the f-string itself. The f-string can be formatted in much same as the str.format() method. 
+The f-string offers a convenient way to embed Python expression inside string literals for formatting.
+'''
+
+print(f"Hey my name is{name} and country is {country}")
+
+
+#2f
+price = 40.0393
+print(f"For only {price:.2f} dollars!")
+print(f"{2*30}")
+
+
+
+print(f"Hey my name is {{name}} and country is {{country}} ")  #not take value print as it is raw
+
+
+#Docstrings and pep8
+'''
+Python docstrings are the string literals that appear right after the definition of a function, method, class, or module.
+
+Python Comments vs Docstrings
+Python Comments
+Comments are descriptions that help programmers better understand the intent and functionality of the program. They are completely ignored by the Python interpreter.
+
+Python docstrings
+As mentioned above, Python docstrings are strings used right after the definition of a function, method, class, or module (like in Example 1). They are used to document
+our code.
+
+We can access these docstrings using the doc attribute.
+'''
+
+def square(n):
+    '''take in a number n, returns the square of n'''
+    print(n**2)
+square(5)
+print(square.__doc__)  #docstring 
+
+
+#Not going to print because doc string should be below or right above the function or class
+def square(n):
+    print(n)
+    '''take in a number n, returns the square of n'''
+    print(n**2)
+square(5)
+print(square.__doc__)  #docstring 
+
+
+
+
+'''
+PEP 8 is a document that provides guidelines and best practices on how to write Python code. It was written in 2001 by Guido van Rossum, 
+Barry Warsaw, and Nick Coghlan. The primary focus of PEP 8 is to improve the readability and consistency of Python code.
+
+PEP stands for Python Enhancement Proposal, and there are several of them. A PEP is a document that describes new features proposed for Python and documents 
+aspects of Python, like design and style, for the community.
+
+
+The Zen of Python
+Long time Pythoneer Tim Peters succinctly channels the BDFL’s guiding principles for Python’s design into 20 aphorisms, only 19 of which have been written down.
+'''
+
+import this   #poem easter egg
