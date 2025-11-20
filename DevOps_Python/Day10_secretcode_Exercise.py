@@ -38,21 +38,14 @@ def encoder(userinput):
         temp=a[0]
         a.pop(0)
         a.append(temp)
-    res = ''.join(a)
-    random_string1 = ''.join(random.choices(string.ascii_lowercase,k=randomlength))
-    random_string2 = ''.join(random.choices(string.ascii_lowercase,k=randomlength))
-    print(random_string1+res+random_string2)
-
-    
-    
-    
-    
-
-
-
-        
-
-
+        res = ''.join(a)
+        random_string1 = ''.join(random.choices(string.ascii_lowercase,k=randomlength))
+        random_string2 = ''.join(random.choices(string.ascii_lowercase,k=randomlength))
+        print(random_string1+res+random_string2)
+    else:
+        b = a[::-1]
+        res = ''.join(b)
+        print(res)
 
 
 
