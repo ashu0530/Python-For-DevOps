@@ -31,9 +31,9 @@ import random
 import string
 
 
-def encoder(userinput):
+def encoder(option1):
     randomlength=3
-    a = list(userinput)
+    a = list(option1)
     if len(a) >= 3:
         temp=a[0]
         a.pop(0)
@@ -46,9 +46,13 @@ def encoder(userinput):
         b = a[::-1]
         res = ''.join(b)
         print(res)
+    return res
+
+def decoder()
 
 
+userinput = int(input("Enter your options 1 for encode and 2 for decode: "))
 
-userinput = input("Enter your word: ")
-encoder(userinput)
-
+if userinput == 1:
+    option1 = input("Enter your string: ")
+    encoder(option1)
