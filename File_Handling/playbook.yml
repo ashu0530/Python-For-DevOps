@@ -1,0 +1,7 @@
+- hosts: all
+  name: Install packages
+  tasks:
+  - apt:
+      name: nginx
+      state: present
+    name: Install nginx
